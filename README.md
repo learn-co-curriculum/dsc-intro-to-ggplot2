@@ -45,7 +45,7 @@ ggplot(tips)
 If you run this in your R console, you won't get any errors, but you also won't see anything interesting. 
 It might look a bit like this:  
 
-<img src="ggp-1.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-1.png">
 
 There's a big grey area where there should be a plot!
 Why isn't there anything there?
@@ -62,7 +62,7 @@ The code above gets a bit more explicit about what we want to plot.
 Specifically, here we want to put our `total_bill` variable on the x-axis and the `tip` variable on the y axis.
 If you run that, it will look a bit like this:  
 
-<img src="ggp-2.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-2.png">
 
 What do we see now?
 Now ggplot knows what variables you want on each axis and under the hood it does the math to figure out what the mathematical bounds of that variable are.
@@ -86,7 +86,7 @@ ggplot(tips, aes(x = total_bill, y = tip)) +
   geom_point()
 ```  
 
-<img src="ggp-3.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-3.png">
 
 It's our points! 
 We now have the data on the plot. 
@@ -106,7 +106,7 @@ ggplot(tips, aes(x = total_bill, y = tip, color = time)) +
   geom_point()
 ```  
 
-<img src="ggp-4.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-4.png">
 
 But why stop there?
 
@@ -117,7 +117,7 @@ ggplot(tips, aes(x = total_bill, y = tip, color = time, shape = smoker)) +
   geom_point()
 ```  
 
-<img src="ggp-5.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-5.png">
 
 
 Now that's a lot of data here and you might have a hard time digesting all of that in one go.
@@ -133,7 +133,7 @@ ggplot(tips, aes(x = total_bill, y = tip, color = time, shape = smoker)) +
   facet_wrap(~day)
 ```  
 
-<img src="ggp-6.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-6.png">
 
 
 And just like that, we have broken up our data into different panels based on a variable already in our data set!
@@ -150,7 +150,7 @@ ggplot(tips, aes(x = day)) +
   geom_bar()
 ```  
 
-<img src="ggp-7.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-7.png">
 
 
 ```{r}
@@ -158,7 +158,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar()
 ```  
 
-<img src="ggp-8.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-8.png">
 
 Just like above, to make a ggplot you need to first tell it what data you want to work with, then how you want to map your data to the aesthetic properties of the data visualization.
 Now since we know we are going to make a bar plot, bar plots almost always have counts as the y-axis and any other variation on them is going to need the count data to make plots that depend on it like percents. 
@@ -172,7 +172,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "dodge")
 ```  
 
-<img src="ggp-dodge.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-dodge.png">
 
 
 ```{r}
@@ -180,7 +180,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "fill")
 ```  
 
-<img src="ggp-fill.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-fill.png">
 
 
 And you can also use what we did above to break these down with `facet_wrap()`:
@@ -190,7 +190,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "dodge") + 
   facet_wrap(~time)
 ```  
-<img src="ggp-9.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-9.png">
 
 Now these plots here tell us a lot about the data, but might not be as clear to other people.
 Let's make it easier for them to read.
@@ -206,7 +206,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
        x =  "Day", y = "Count")
 ```  
 
-<img src="ggp-10.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-10.png">
 
 Notice that we add on another layer here with the `labs()` function to add on our title, the name of our axes, and we can even add a subtitle! 
 
@@ -234,7 +234,7 @@ tips %>%
   
 ```  
 
-<img src="ggp-11.png">
+<img src="https://raw.githubusercontent.com/learn-co-curriculum/dsc-intro-to-ggplot2/master/ggp-11.png">
 
 This can be very helpful when making analyses on the fly! 
 
