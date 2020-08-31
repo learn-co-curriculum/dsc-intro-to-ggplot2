@@ -43,7 +43,7 @@ ggplot(tips)
 ```
 
 If you run this in your R console, you won't get any errors, but you also won't see anything interesting. 
-It might look a bit like this:
+It might look a bit like this:  
 
 <img src="ggp-1.png">
 
@@ -60,7 +60,7 @@ ggplot(tips, aes(x = total_bill, y = tip))
 
 The code above gets a bit more explicit about what we want to plot.
 Specifically, here we want to put our `total_bill` variable on the x-axis and the `tip` variable on the y axis.
-If you run that, it will look a bit like this:
+If you run that, it will look a bit like this:  
 
 <img src="ggp-2.png">
 
@@ -84,7 +84,7 @@ What do you now see?
 ```{r}
 ggplot(tips, aes(x = total_bill, y = tip)) +
   geom_point()
-```
+```  
 
 <img src="ggp-3.png">
 
@@ -104,7 +104,7 @@ In order to this, we need to tell ggplot that we want the time variable to be ma
 ```{r}
 ggplot(tips, aes(x = total_bill, y = tip, color = time)) +
   geom_point()
-```
+```  
 
 <img src="ggp-4.png">
 
@@ -115,7 +115,7 @@ Let's take advantage of the fact that we can use the shape mapping to show anoth
 ```{r}
 ggplot(tips, aes(x = total_bill, y = tip, color = time, shape = smoker)) +
   geom_point()
-```
+```  
 
 <img src="ggp-5.png">
 
@@ -131,7 +131,7 @@ If we wanted to make separate plots for each day, we can use the `facet_wrap()` 
 ggplot(tips, aes(x = total_bill, y = tip, color = time, shape = smoker)) +
   geom_point() + 
   facet_wrap(~day)
-```
+```  
 
 <img src="ggp-6.png">
 
@@ -148,7 +148,7 @@ Now knowing what you know about ggplot thus far, can you figure out what the plo
 ```{r}
 ggplot(tips, aes(x = day)) +
   geom_bar()
-```
+```  
 
 <img src="ggp-7.png">
 
@@ -156,7 +156,7 @@ ggplot(tips, aes(x = day)) +
 ```{r}
 ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar()
-```
+```  
 
 <img src="ggp-8.png">
 
@@ -170,7 +170,7 @@ Further, you can also change how this data is presented by altering an argument 
 ```{r}
 ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "dodge")
-```
+```  
 
 <img src="ggp-dodge.png">
 
@@ -178,7 +178,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
 ```{r}
 ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "fill")
-```
+```  
 
 <img src="ggp-fill.png">
 
@@ -189,8 +189,7 @@ And you can also use what we did above to break these down with `facet_wrap()`:
 ggplot(tips, aes(x = day, fill= smoker)) +
   geom_bar(position = "dodge") + 
   facet_wrap(~time)
-```
-
+```  
 <img src="ggp-9.png">
 
 Now these plots here tell us a lot about the data, but might not be as clear to other people.
@@ -205,7 +204,7 @@ ggplot(tips, aes(x = day, fill= smoker)) +
   labs(title = "Number of Patrons By Day and Meal",
        subtitle = "Position by Smoker",
        x =  "Day", y = "Count")
-```
+```  
 
 <img src="ggp-10.png">
 
@@ -233,7 +232,8 @@ tips %>%
        subtitle = "Position by Smoker",
        x =  "Day", y = "Count")
   
-```
+```  
+
 <img src="ggp-11.png">
 
 This can be very helpful when making analyses on the fly! 
